@@ -1,3 +1,5 @@
+package model;
+
 public class Student implements Comparable<Student>{
     @Override
     public int compareTo(Student o) {
@@ -14,6 +16,15 @@ public class Student implements Comparable<Student>{
 
     private int id ;
     private String name;
+    private int age ;
+    private boolean sex;
+
+    public Student(int id, String name, int age, boolean sex) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
 
     public int getId() {
         return id;
@@ -39,11 +50,29 @@ public class Student implements Comparable<Student>{
         this.name = name;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public boolean isSex() {
+        return sex;
+    }
+
+    public void setSex(boolean sex) {
+        this.sex = sex;
+    }
+
     @Override
     public String toString() {
-        return "Student{" +
+        return "model.Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", age=" + age +
+                ", sex=" + (sex?"Nam":"Nữ") +
                 '}';
     }
 }
